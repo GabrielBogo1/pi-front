@@ -1,0 +1,129 @@
+2024-05-19T16:46:11.469-03:00  INFO 24536 --- [main] p.ProjetointegradorcciarApplication      : Starting ProjetointegradorcciarApplication using Java 17.0.8 with PID 24536 (C:\Users\55459\OneDrive\햞ea de Trabalho\Integrador-Front-UA-BACK-END (1)\Integrador-Front-UA-BACK-END\projetointegradorcciar\target\classes started by CHEROSO in C:\Users\55459\OneDrive\햞ea de Trabalho\Integrador-Front-UA-BACK-END (1))
+2024-05-19T16:46:11.481-03:00  INFO 24536 --- [main] p.ProjetointegradorcciarApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-05-19T16:46:13.033-03:00  INFO 24536 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-19T16:46:13.215-03:00  INFO 24536 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 152 ms. Found 2 JPA repository interfaces.
+2024-05-19T16:46:14.637-03:00  INFO 24536 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-05-19T16:46:14.660-03:00  INFO 24536 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-19T16:46:14.661-03:00  INFO 24536 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-05-19T16:46:14.925-03:00  INFO 24536 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-19T16:46:14.926-03:00  INFO 24536 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3342 ms
+2024-05-19T16:46:15.287-03:00  INFO 24536 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.16.3 by Redgate
+2024-05-19T16:46:15.287-03:00  INFO 24536 --- [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-05-19T16:46:15.288-03:00  INFO 24536 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2024-05-19T16:46:15.309-03:00  INFO 24536 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-19T16:46:15.787-03:00  INFO 24536 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@40ce9049
+2024-05-19T16:46:15.789-03:00  INFO 24536 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-19T16:46:15.836-03:00  INFO 24536 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5432/projetointegrador (PostgreSQL 15.2)
+2024-05-19T16:46:15.945-03:00  INFO 24536 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.038s)
+2024-05-19T16:46:15.946-03:00  WARN 24536 --- [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2024-05-19T16:46:16.000-03:00  INFO 24536 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2024-05-19T16:46:16.003-03:00  INFO 24536 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-05-19T16:46:16.209-03:00  INFO 24536 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-19T16:46:16.372-03:00  INFO 24536 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-05-19T16:46:16.380-03:00  INFO 24536 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-05-19T16:46:17.111-03:00  INFO 24536 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-19T16:46:17.251-03:00  WARN 24536 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-19T16:46:19.025-03:00  INFO 24536 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-19T16:46:19.095-03:00  WARN 24536 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-19T16:46:19.096-03:00  WARN 24536 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : drop cascades to constraint fkt5004cad7hfa6sq4gpndrxe5p on table atividade_pessoa
+2024-05-19T16:46:19.108-03:00  WARN 24536 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-19T16:46:19.109-03:00  WARN 24536 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : drop cascades to constraint fk59d1sb8n5jdpcdpyomwqa7eje on table atividade_pessoa
+2024-05-19T16:46:19.117-03:00  WARN 24536 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-19T16:46:19.118-03:00  WARN 24536 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "fk59d1sb8n5jdpcdpyomwqa7eje" of relation "atividade_pessoa" does not exist, skipping
+2024-05-19T16:46:19.119-03:00  WARN 24536 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-19T16:46:19.120-03:00  WARN 24536 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "fkt5004cad7hfa6sq4gpndrxe5p" of relation "atividade_pessoa" does not exist, skipping
+2024-05-19T16:46:19.265-03:00  INFO 24536 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-19T16:46:19.736-03:00  INFO 24536 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-19T16:46:20.060-03:00  WARN 24536 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-19T16:46:20.528-03:00  INFO 24536 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@9e4388d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@28532753, org.springframework.security.web.context.SecurityContextHolderFilter@55849272, org.springframework.security.web.header.HeaderWriterFilter@128d397c, org.springframework.web.filter.CorsFilter@d5bb1c4, org.springframework.security.web.authentication.logout.LogoutFilter@68a7f77a, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@42d96745, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@520eb9f8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@e280006, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@21399e53, org.springframework.security.web.access.ExceptionTranslationFilter@5318731f, org.springframework.security.web.access.intercept.AuthorizationFilter@72851503]
+2024-05-19T16:46:20.845-03:00  INFO 24536 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-05-19T16:46:20.860-03:00  INFO 24536 --- [main] p.ProjetointegradorcciarApplication      : Started ProjetointegradorcciarApplication in 10.17 seconds (process running for 10.682)
+2024-05-19T16:49:15.192-03:00  INFO 24536 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-19T16:49:15.203-03:00  INFO 24536 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-19T16:49:15.247-03:00  INFO 24536 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 43 ms
+2024-05-19T17:01:07.339-03:00  INFO 27296 --- [main] p.ProjetointegradorcciarApplication      : Starting ProjetointegradorcciarApplication using Java 17.0.8 with PID 27296 (C:\Users\55459\OneDrive\햞ea de Trabalho\Integrador-Front-UA-BACK-END (1)\Integrador-Front-UA-BACK-END\projetointegradorcciar\target\classes started by CHEROSO in C:\Users\55459\OneDrive\햞ea de Trabalho\Integrador-Front-UA-BACK-END (1))
+2024-05-19T17:01:07.346-03:00  INFO 27296 --- [main] p.ProjetointegradorcciarApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-05-19T17:01:09.332-03:00  INFO 27296 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-19T17:01:09.510-03:00  INFO 27296 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 148 ms. Found 2 JPA repository interfaces.
+2024-05-19T17:01:12.424-03:00  INFO 27296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-05-19T17:01:12.443-03:00  INFO 27296 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-19T17:01:12.444-03:00  INFO 27296 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-05-19T17:01:12.647-03:00  INFO 27296 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-19T17:01:12.648-03:00  INFO 27296 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5178 ms
+2024-05-19T17:01:12.991-03:00  INFO 27296 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.16.3 by Redgate
+2024-05-19T17:01:12.992-03:00  INFO 27296 --- [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-05-19T17:01:12.995-03:00  INFO 27296 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2024-05-19T17:01:13.015-03:00  INFO 27296 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-19T17:01:13.367-03:00  INFO 27296 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@611b35d6
+2024-05-19T17:01:13.371-03:00  INFO 27296 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-19T17:01:13.406-03:00  INFO 27296 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5432/projetointegrador (PostgreSQL 15.2)
+2024-05-19T17:01:13.476-03:00  INFO 27296 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.029s)
+2024-05-19T17:01:13.478-03:00  WARN 27296 --- [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2024-05-19T17:01:13.579-03:00  INFO 27296 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2024-05-19T17:01:13.583-03:00  INFO 27296 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-05-19T17:01:13.844-03:00  INFO 27296 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-19T17:01:14.038-03:00  INFO 27296 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-05-19T17:01:14.049-03:00  INFO 27296 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-05-19T17:01:14.694-03:00  INFO 27296 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-19T17:01:14.788-03:00  WARN 27296 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-19T17:01:16.362-03:00  INFO 27296 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-19T17:01:16.412-03:00  WARN 27296 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-19T17:01:16.413-03:00  WARN 27296 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : drop cascades to constraint fkt5004cad7hfa6sq4gpndrxe5p on table atividade_pessoa
+2024-05-19T17:01:16.427-03:00  WARN 27296 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-19T17:01:16.428-03:00  WARN 27296 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : drop cascades to constraint fk59d1sb8n5jdpcdpyomwqa7eje on table atividade_pessoa
+2024-05-19T17:01:16.436-03:00  WARN 27296 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-19T17:01:16.437-03:00  WARN 27296 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "fk59d1sb8n5jdpcdpyomwqa7eje" of relation "atividade_pessoa" does not exist, skipping
+2024-05-19T17:01:16.439-03:00  WARN 27296 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-19T17:01:16.440-03:00  WARN 27296 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "fkt5004cad7hfa6sq4gpndrxe5p" of relation "atividade_pessoa" does not exist, skipping
+2024-05-19T17:01:16.577-03:00  INFO 27296 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-19T17:01:16.992-03:00  INFO 27296 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-19T17:01:17.347-03:00  WARN 27296 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-19T17:01:17.827-03:00  INFO 27296 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4fae4c3b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2222cd2c, org.springframework.security.web.context.SecurityContextHolderFilter@80b70fd, org.springframework.security.web.header.HeaderWriterFilter@795e8ef5, org.springframework.web.filter.CorsFilter@56e9a474, org.springframework.security.web.authentication.logout.LogoutFilter@48dc9950, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@2c485b3a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2df24f19, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@128d397c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4cddc3d9, org.springframework.security.web.access.ExceptionTranslationFilter@332610ad, org.springframework.security.web.access.intercept.AuthorizationFilter@4960b819]
+2024-05-19T17:01:18.204-03:00  INFO 27296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-05-19T17:01:18.227-03:00  INFO 27296 --- [main] p.ProjetointegradorcciarApplication      : Started ProjetointegradorcciarApplication in 11.594 seconds (process running for 12.062)
+2024-05-19T17:02:13.505-03:00  INFO 27296 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-19T17:02:13.506-03:00  INFO 27296 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-19T17:02:13.510-03:00  INFO 27296 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-05-19T17:07:01.076-03:00  INFO 10512 --- [main] p.ProjetointegradorcciarApplication      : Starting ProjetointegradorcciarApplication using Java 17.0.8 with PID 10512 (C:\Users\55459\OneDrive\햞ea de Trabalho\Integrador-Front-UA-BACK-END (1)\Integrador-Front-UA-BACK-END\projetointegradorcciar\target\classes started by CHEROSO in C:\Users\55459\OneDrive\햞ea de Trabalho\Integrador-Front-UA-BACK-END (1))
+2024-05-19T17:07:01.080-03:00  INFO 10512 --- [main] p.ProjetointegradorcciarApplication      : No active profile set, falling back to 1 default profile: "default"
+2024-05-19T17:07:02.420-03:00  INFO 10512 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-19T17:07:02.530-03:00  INFO 10512 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 2 JPA repository interfaces.
+2024-05-19T17:07:03.450-03:00  INFO 10512 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-05-19T17:07:03.478-03:00  INFO 10512 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-19T17:07:03.482-03:00  INFO 10512 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-05-19T17:07:03.911-03:00  INFO 10512 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-19T17:07:03.915-03:00  INFO 10512 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2751 ms
+2024-05-19T17:07:04.789-03:00  INFO 10512 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.16.3 by Redgate
+2024-05-19T17:07:04.792-03:00  INFO 10512 --- [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-05-19T17:07:04.793-03:00  INFO 10512 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2024-05-19T17:07:04.835-03:00  INFO 10512 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-19T17:07:05.400-03:00  INFO 10512 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@611b35d6
+2024-05-19T17:07:05.404-03:00  INFO 10512 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-19T17:07:05.448-03:00  INFO 10512 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:postgresql://localhost:5432/projetointegrador (PostgreSQL 15.2)
+2024-05-19T17:07:05.523-03:00  INFO 10512 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.029s)
+2024-05-19T17:07:05.525-03:00  WARN 10512 --- [main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2024-05-19T17:07:05.620-03:00  INFO 10512 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2024-05-19T17:07:05.622-03:00  INFO 10512 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-05-19T17:07:05.892-03:00  INFO 10512 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-19T17:07:06.057-03:00  INFO 10512 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-05-19T17:07:06.064-03:00  INFO 10512 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-05-19T17:07:06.690-03:00  INFO 10512 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-19T17:07:06.798-03:00  WARN 10512 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-19T17:07:08.516-03:00  INFO 10512 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-19T17:07:08.566-03:00  WARN 10512 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-19T17:07:08.568-03:00  WARN 10512 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : drop cascades to constraint fkt5004cad7hfa6sq4gpndrxe5p on table atividade_pessoa
+2024-05-19T17:07:08.586-03:00  WARN 10512 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-19T17:07:08.587-03:00  WARN 10512 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : drop cascades to constraint fk59d1sb8n5jdpcdpyomwqa7eje on table atividade_pessoa
+2024-05-19T17:07:08.600-03:00  WARN 10512 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-19T17:07:08.601-03:00  WARN 10512 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "fk59d1sb8n5jdpcdpyomwqa7eje" of relation "atividade_pessoa" does not exist, skipping
+2024-05-19T17:07:08.605-03:00  WARN 10512 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-19T17:07:08.605-03:00  WARN 10512 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "fkt5004cad7hfa6sq4gpndrxe5p" of relation "atividade_pessoa" does not exist, skipping
+2024-05-19T17:07:08.806-03:00  INFO 10512 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-19T17:07:09.602-03:00  INFO 10512 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-05-19T17:07:10.073-03:00  WARN 10512 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-19T17:07:10.709-03:00  INFO 10512 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4fae4c3b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2222cd2c, org.springframework.security.web.context.SecurityContextHolderFilter@80b70fd, org.springframework.security.web.header.HeaderWriterFilter@795e8ef5, org.springframework.web.filter.CorsFilter@56e9a474, org.springframework.security.web.authentication.logout.LogoutFilter@48dc9950, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@2c485b3a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2df24f19, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@128d397c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4cddc3d9, org.springframework.security.web.access.ExceptionTranslationFilter@332610ad, org.springframework.security.web.access.intercept.AuthorizationFilter@4960b819]
+2024-05-19T17:07:11.211-03:00  INFO 10512 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-05-19T17:07:11.255-03:00  INFO 10512 --- [main] p.ProjetointegradorcciarApplication      : Started ProjetointegradorcciarApplication in 10.831 seconds (process running for 11.325)
+2024-05-19T17:07:54.635-03:00  INFO 10512 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-19T17:07:54.637-03:00  INFO 10512 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-19T17:07:54.640-03:00  INFO 10512 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

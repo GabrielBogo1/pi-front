@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Deletar pessoa</h1>
+<div mat-dialog-content>Deseja deletar os registros dessa pessoa?</div>
+<div mat-dialog-actions>
+  <button cdkFocusInitial mat-button mat-dialog-close>Cancelar</button>
+  <button id="deletar" mat-button [mat-dialog-close]="true" mat-dialog-close >
+    Deletar
+  </button>
+</div>
+
+<style>
+  button {
+    margin-right: 8px;
+  }
+
+  #deletar{
+    color: red;
+  }
+</style>

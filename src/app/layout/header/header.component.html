@@ -1,0 +1,30 @@
+<header>
+  <nav class="nav-bar">
+    <div>
+      <img
+        src="https://www5.pmfi.pr.gov.br/images/logo.png"
+        alt=""
+        width="115px"
+        height="135px"
+      />
+    </div>
+    <h1 class="ajustarTitulo">CCIAR</h1>
+
+    <div class="nav-list">
+      <ul>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="cadastro">Cadastros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#/home/agenda">Agenda</a>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" (click)="viewInfo()"><a class="nav-link">Perfil</a></button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" (click)="logout()"><a class="nav-link">Sair</a></button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

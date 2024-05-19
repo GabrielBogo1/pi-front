@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Concluir atividade</h1>
+<div mat-dialog-content>Concluir essa atividade?</div>
+<div mat-dialog-actions>
+  <button cdkFocusInitial mat-button mat-dialog-close>Fechar</button>
+  <button id="concluir" mat-button [mat-dialog-close]="true" mat-dialog-close >
+    Concluir
+  </button>
+</div>
+
+<style>
+  button {
+    margin-right: 8px;
+  }
+
+  #concluir{
+    color: green;
+  }
+</style>

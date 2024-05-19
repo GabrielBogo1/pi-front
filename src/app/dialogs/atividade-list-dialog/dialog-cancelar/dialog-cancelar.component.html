@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Cancelar atividade</h1>
+<div mat-dialog-content>Deseja cancelar essa atividade?</div>
+<div mat-dialog-actions>
+  <button cdkFocusInitial mat-button mat-dialog-close>Fechar</button>
+  <button id="deletar" mat-button [mat-dialog-close]="true" mat-dialog-close >
+    Cancelar
+  </button>
+</div>
+
+<style>
+  button {
+    margin-right: 8px;
+  }
+
+  #deletar{
+    color: red;
+  }
+</style>

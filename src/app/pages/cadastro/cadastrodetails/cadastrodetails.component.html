@@ -1,0 +1,209 @@
+<div class="ajusteCima">
+  <!-- <span id="iconeMais" class="material-icons md-36"> add_circle_outline </span> -->
+  <h1 id="novoCadastro">Novo Cadastro:</h1>
+</div>
+
+<form>
+  <div class="geral">
+    <div class="tudo">
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="Nome completo"
+          >Nome completo:</label
+        >
+
+        <input
+          id="Nome completo"
+          name="Nome completo"
+          type="text"
+          placeholder="Nome completo"
+          class="form-control input-md ajustePESQ"
+          maxlength="40"
+          [(ngModel)]="pessoa.nome"
+        />
+      </div>
+
+      <div class="form-group separa">
+        <label class="col-md-4 control-label" for="Telefone"
+          >N° de telefone:</label
+        >
+
+        <input
+          id="telefone"
+          name="Telefone"
+          type="text"
+          placeholder="Telefone"
+          maxlength="14"
+          class="form-control input-md"
+          [(ngModel)]="pessoa.telefone"
+          appPhoneMask
+        />
+      </div>
+
+      <div class="form-group separa">
+        <label class="col-md-4 control-label" for="CPF">CPF:</label>
+
+        <input
+          id="cpf"
+          name="CPF"
+          type="text"
+          placeholder="CPF"
+          class="form-control input-md"
+          maxlength="14"
+          appCpfMask
+          [(ngModel)]="pessoa.cpf"
+        />
+      </div>
+
+      <div class="form-group separa">
+        <label class="col-md-4 control-label" for="RG">RG:</label>
+
+        <input
+          id="RG"
+          name="RG"
+          type="text"
+          placeholder="RG"
+          class="form-control input-md"
+          appRgMask
+          maxlength="12"
+          [(ngModel)]="pessoa.rg"
+        />
+      </div>
+
+      <div class="form-group separa">
+        <label class="col-md-4 control-label" for="Data de Nascimento"
+          >Data de nascimento:</label
+        >
+        <input
+          id="Data de nascimento"
+          name="Data de nascimento"
+          type="text"
+          maxlength="4"
+          placeholder="Ano de Nascimento"
+          class="form-control input-md"
+          [(ngModel)]="pessoa.dataNascimento"
+        />
+      </div>
+    </div>
+
+    <div class="tudo2">
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="Nome completo">Sexo:</label>
+        <select
+        required=""
+          id="Nome completo"
+          class="form-control selectAjt"
+          name="sexoSelect"
+          class="form-control input-md"
+          placeholer = "teste"
+          [(ngModel)]="pessoa.sexo"
+        >
+          <option value="" disabled selected>Sexo</option>
+          <option value="MASCULINO">Masculino</option>
+          <option value="FEMININO">Feminino</option>
+          <option value="OUTRO">Outro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="Nome completo">CEP:</label>
+        <input
+          id="Nome completo"
+          type="text"
+          placeholder="CEP"
+          class="form-control input-md"
+          [(ngModel)]="pessoa.endereco.cep"
+          [ngModelOptions]="{ standalone: true }"
+          (blur)="buscarCep()"
+        />
+      </div>
+      <div class="form-group separa">
+        <label class="col-md-4 control-label" for="Nome completo">Rua:</label>
+        <input
+          id="Nome completo"
+          type="text"
+          placeholder="Rua"
+          class="form-control input-md"
+          [(ngModel)]="pessoa.endereco.localidade"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+      <div class="form-group separa">
+        <label class="col-md-4 control-label" for="Nome completo"
+          >Bairro:</label
+        >
+        <input
+          id="Nome completo"
+          type="text"
+          placeholder="Bairro"
+          class="form-control input-md"
+          [(ngModel)]="pessoa.endereco.logradouro"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+      <div class="form-group separa">
+        <label class="col-md-4 control-label" for="Nome completo"
+          >Município:</label
+        >
+        <input
+          id="Nome completo"
+          type="text"
+          placeholder="Município"
+          class="form-control input-md"
+          [(ngModel)]="pessoa.endereco.municipio"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+    </div>
+
+    <div class="tudo3">
+      <div class="form-group separa">
+        <label class="col-md-4 control-label" for="Nome completo"
+          >Nacionalidade:</label
+        >
+        <input
+          id="Nome completo"
+          type="text"
+          placeholder="Nacionalidade"
+          class="form-control input-md"
+          [(ngModel)]="pessoa.nacionalidade"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+      <div class="form-group separa">
+        <label class="col-md-4 control-label" for="Nome completo"
+          >Estado:</label
+        >
+        <input
+          id="Nome completo"
+          type="text"
+          placeholder="Estado"
+          class="form-control input-md"
+          [(ngModel)]="pessoa.endereco.uf"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+    </div>
+
+    <div class="ajeitaBotao">
+      <div class="botao">
+        <button (click)="save()" type="button" class="btn btn-success btn-md">
+          Cadastrar
+        </button>
+      </div>
+
+      <div class="botao2">
+        <button
+          routerLink="/home/cadastro"
+          type="button"
+          class="btn btn-primary btn-md"
+        >
+          Voltar
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<script
+  src="https://kit.fontawesome.com/b5463cd1fb.js"
+  crossorigin="anonymous"
+></script>

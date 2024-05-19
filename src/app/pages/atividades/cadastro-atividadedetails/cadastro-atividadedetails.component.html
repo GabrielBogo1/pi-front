@@ -1,0 +1,302 @@
+<div class="header">
+  <h1>Adicionar nova atividade</h1>
+</div>
+
+<div class="add-task">
+  <div class="content">
+    <form class="formAll" [formGroup]="atividadeForm" (submit)="salvar()">
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input
+          matInput
+          placeholder="Nome"
+          formControlName="nomeAtividade"
+
+          [(ngModel)]="atividade.nomeAtividade"
+        />
+      </mat-form-field>
+      <mat-form-field class="dta" appearance="fill">
+        <mat-label>Data</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          formControlName="dataAtividade"
+          [(ngModel)]="atividade.dataAtividade"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Horário da atividade</mat-label>
+        <input
+          matInput
+          type="time"
+          placeholder="HH:mm"
+          formControlName="horarioAtividade"
+          #time
+          [(ngModel)]="atividade.horarioAtividade"
+          ng2-mask="00:00"
+        />
+      </mat-form-field>
+
+      <div fxFlex="50" fxFill fxLayoutAlign="start center">
+        <mat-form-field class="description">
+          <mat-label>Descrição</mat-label>
+          <textarea
+            matInput
+            placeholder="Descrição"
+            formControlName="descricao"
+            [(ngModel)]="atividade.descricao"
+          ></textarea>
+        </mat-form-field>
+      </div>
+
+      <!-- <button
+        routerLink="/home/agenda"
+        mat-raised-button
+        color="primary"
+      >
+        Voltar
+      </button>
+      
+      <button
+      [disabled]="atividadeForm.invalid"
+      type="submit"
+      mat-raised-button
+      color="primary"
+    >
+      Salvar
+    </button> -->
+    </form>
+
+    <div>
+      <div class="btns">
+        <button routerLink="/home/agenda" class="btnAdd btn btn-primary">
+          Voltar
+        </button>
+
+        <button
+          [disabled]="atividadeForm.invalid"
+          type="submit"
+          class="btnAdd btn btn-success"
+          (click)="salvar()"
+        >
+          Salvar
+        </button>
+      </div>
+      <div></div>
+
+      <table class="tb table table-striped">
+        <thead>
+          <tr>
+            <th>#ID</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Opções</th>
+            <th>
+              <button
+                class="btnAdd btn btn-success"
+                (click)="adicionar(modal1)"
+              >
+                + Adicionar Pessoas
+              </button>
+              <button class="btnPdf btn btn-warning" (click)="generatePDF()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-printer"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
+                  <path
+                    d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"
+                  />
+                </svg>
+                Gerar PDF
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pessoa of atividade.pessoas; let i = index">
+            <td>
+              {{ pessoa.id }}
+            </td>
+            <td>
+              {{ pessoa.nome }}
+            </td>
+            <td>
+              {{ pessoa.telefone }}
+            </td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="excluir(pessoa, i)"
+              >
+                Excluir
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<ng-template #modal1 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Adicionar Pessoa</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <app-cadastrolist
+      [modoLancamento]="true"
+      (retorno)="retornoPessoasList($event)"
+    ></app-cadastrolist>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-light"
+      (click)="modal.close('Close click')"
+    >
+      Fechar
+    </button>
+  </div>
+</ng-template>
+
+<!-- BACKUP -->
+
+<!-- <div class="header">
+  <h1>Adicionar nova atividade</h1>
+</div>
+<button (click)="adicionar(modal1)">Adicionar Pessoas</button>
+
+<div class="add-task">
+  <div class="content">
+    <form [formGroup]="atividadeForm" (submit)="salvar()">
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Nome" formControlName="nomeAtividade" [(ngModel)]="atividade.nomeAtividade"/>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Data</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          formControlName="dataAtividade"
+          [(ngModel)]="atividade.dataAtividade"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Descrição</mat-label>
+        <textarea
+          matInput
+          placeholder="Descrição"
+          formControlName="descricao"
+          [(ngModel)]="atividade.descricao"
+        ></textarea>
+      </mat-form-field>
+      <div fxFlex="50" fxFill fxLayoutAlign="start center">
+        <mat-form-field>
+            <mat-label>Horário da atividade</mat-label>
+            <input matInput type="time" placeholder="HH:mm" formControlName="horarioAtividade" #time [(ngModel)]="atividade.horarioAtividade" ng2-mask="00:00" />
+        </mat-form-field>
+    </div>
+      <button
+        [disabled]="atividadeForm.invalid"
+        type="submit"
+        mat-raised-button
+        color="primary"
+      >
+        Salvar
+      </button>
+
+      <button
+        routerLink="/home/agenda"
+        mat-raised-button
+        color="primary"
+      >
+        Voltar
+      </button>
+    </form>
+
+
+    <label class="col-md-4 control-label" for="descricao"
+        >Pessoas cadastradas:</label
+      >
+      <div>
+        <button (click)="generatePDF()">Gerar PDF</button>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#ID</th>
+              <th>Nome</th>
+              <th>Telefone</th>
+              <th>Opções</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pessoa of atividade.pessoas; let i = index">
+              <td>
+                {{ pessoa.id }}
+              </td>
+              <td>
+                {{ pessoa.nome }}
+              </td>
+              <td>
+                {{ pessoa.telefone }}
+              </td>
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  (click)="excluir(pessoa, i)"
+                >
+                  Excluir
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+</div>
+
+<ng-template #modal1 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Adicionar Pessoa</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <app-cadastrolist
+      [modoLancamento]="true"
+      (retorno)="retornoPessoasList($event)"
+    ></app-cadastrolist>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-light"
+      (click)="modal.close('Close click')"
+    >
+      Fechar
+    </button>
+  </div>
+</ng-template> -->

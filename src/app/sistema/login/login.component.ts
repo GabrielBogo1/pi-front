@@ -1,5 +1,4 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Router } from '@angular/router';
 import { KeycloakService } from 'src/app/keycloak-config/keycloak.service';
 
 @Component({

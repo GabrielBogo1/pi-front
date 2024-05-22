@@ -11,7 +11,7 @@ export class AtividadeService {
   constructor() { }
 
 
-  API = 'http://localhost:8080/api/atividade';
+  API = 'http://54.87.1.103:8080/api/atividade';
   http = inject(HttpClient);
 
   listAll(): Observable<Atividade[]> {

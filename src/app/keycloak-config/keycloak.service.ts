@@ -10,14 +10,14 @@ export class KeycloakService {
   private _keycloak: Keycloak | undefined;
   private _initialized: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   get keycloak() {
     if (!this._keycloak) {
       this._keycloak = new Keycloak({
-        url: 'http://192.168.1.11:8080',
-        realm: 'develop',
-        clientId: 'teste_client'
+        url: 'https://3.222.4.61:8443/',
+        realm: 'projeto-mensal',
+        clientId: 'mensal_client'
       });
     }
     return this._keycloak;
@@ -36,12 +36,13 @@ export class KeycloakService {
 
     const authenticated = await this.keycloak.init({
       onLoad: 'login-required',
+      checkLoginIframe: false
     });
 
     if (authenticated) {
       this._profile = (await this.keycloak.loadUserProfile()) as UserProfile;
       this._profile.token = this.keycloak.token || '';
-      this.router.navigate(['/home']);
+      this.router.navigate(['/home/cadastro']);
     }
 
     this._initialized = true;
@@ -52,7 +53,7 @@ export class KeycloakService {
   }
 
   logout() {
-    return this.keycloak.logout({ redirectUri: 'http://localhost:4200' });
+    return this.keycloak.logout({ redirectUri: '54.208.91.108' });
   }
 
   viewInfo() {

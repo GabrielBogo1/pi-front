@@ -6,7 +6,7 @@ export const authGuard: CanActivateFn = () => {
   const tokenService = inject(KeycloakService);
   const router = inject(Router);
   if (tokenService.keycloak.isTokenExpired()) {
-    router.navigate(['http://localhost:4200/#/login']);
+    router.navigate(['https://54.208.91.108/#/login']);
     return false;
   }
   return true;

@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class PessoaService {
 
   http = inject(HttpClient);
-  API = "http://localhost:8080/api/pessoa";
+  API = "http://54.87.1.103:8080/api/pessoa";
 
   constructor() { }
 

@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { Atividade } from '../models/atividade';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,52 +8,69 @@ import { Observable } from 'rxjs';
 })
 export class AtividadeService {
 
+  http = inject(HttpClient);
+  // API = 'https://34.226.156.225/api/atividade';
+  API = 'https://44.207.63.220:8443/api/atividade';
+
   constructor() { }
 
+  getToken() {
+    return localStorage.getItem('token');
+  }
 
-  API = 'http://54.87.1.103:8080/api/atividade';
-  http = inject(HttpClient);
+  getAuthHeaders() {
+    const token = this.getToken();
+    return new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  }
 
   listAll(): Observable<Atividade[]> {
-    return this.http.get<Atividade[]>(this.API);
+    const headers = this.getAuthHeaders();
+    return this.http.get<Atividade[]>(this.API, { headers });
   }
-  
+
   listAllConcluidas(): Observable<Atividade[]> {
-    return this.http.get<Atividade[]>(`${this.API}/concluidas`);
+    const headers = this.getAuthHeaders();
+    return this.http.get<Atividade[]>(`${this.API}/concluidas`, { headers });
   }
 
   listAllCanceladas(): Observable<Atividade[]> {
-    return this.http.get<Atividade[]>(`${this.API}/canceladas`);
+    const headers = this.getAuthHeaders();
+    return this.http.get<Atividade[]>(`${this.API}/canceladas`, { headers });
   }
 
   pesquisarPorNome(nome: string): Observable<Atividade[]> {
-    return this.http.get<Atividade[]>(`${this.API}/atividades/por-nome?nome=${nome}`);
+    const headers = this.getAuthHeaders();
+    return this.http.get<Atividade[]>(`${this.API}/atividades/por-nome?nome=${nome}`, { headers });
   }
 
   save(atividade: Atividade): Observable<Atividade> {
-    return this.http.post<Atividade>(this.API, atividade);
+    const headers = this.getAuthHeaders();
+    return this.http.post<Atividade>(this.API, atividade, { headers });
   }
 
-  update(atividade: Partial<Atividade>) {
-    return this.http.put<Atividade>(`${this.API}/${atividade.id}`, atividade);
+  update(atividade: Partial<Atividade>): Observable<Atividade> {
+    const headers = this.getAuthHeaders();
+    return this.http.put<Atividade>(`${this.API}/${atividade.id}`, atividade, { headers });
   }
 
-  loadById(id: number) {
-    return this.http.get<Atividade>(`${this.API}/${id}`);
+  loadById(id: number): Observable<Atividade> {
+    const headers = this.getAuthHeaders();
+    return this.http.get<Atividade>(`${this.API}/${id}`, { headers });
   }
 
   delete(id: number): Observable<any> {
-    let params = new HttpParams()
-      .set('id', id.toString())
-    return this.http.delete<any>(this.API, { params: params });
+    const headers = this.getAuthHeaders();
+    let params = new HttpParams().set('id', id.toString());
+    return this.http.delete<any>(this.API, { params: params, headers });
   }
 
-  
-  concluirAtividade(id: number) {
-    return this.http.post(`${this.API}/atualizarAtividade/${id}`, {});
+  concluirAtividade(id: number): Observable<any> {
+    const headers = this.getAuthHeaders();
+    return this.http.post(`${this.API}/atualizarAtividade/${id}`, {}, { headers });
   }
 
-  cancelarAtividade(id: number) {
-    return this.http.post(`${this.API}/cancelarAtividade/${id}`, {});
+  cancelarAtividade(id: number): Observable<any> {
+    const headers = this.getAuthHeaders();
+    return this.http.post(`${this.API}/cancelarAtividade/${id}`, {}, { headers });
   }
 }

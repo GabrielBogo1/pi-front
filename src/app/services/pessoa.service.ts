@@ -1,8 +1,7 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Pessoa } from '../models/pessoa';
 import { Observable } from 'rxjs';
-
 
 @Injectable({
   providedIn: 'root'
@@ -10,46 +9,61 @@ import { Observable } from 'rxjs';
 export class PessoaService {
 
   http = inject(HttpClient);
-  API = "http://54.87.1.103:8080/api/pessoa";
+  // API = 'https://34.226.156.225/api/atividade';
+  API = 'https://44.207.63.220:8443/api/pessoa';
 
   constructor() { }
+
+  getToken() {
+    return localStorage.getItem('token');
+  }
+
+  getAuthHeaders() {
+    const token = this.getToken();
+    return new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  }
 
   save(pessoa: Pessoa): Observable<Pessoa> {
     if (pessoa.id !== undefined && pessoa.id > 0) {
       return this.update(pessoa);
     }
-    return this.http.post<Pessoa>(this.API, pessoa);
+    const headers = this.getAuthHeaders();
+    return this.http.post<Pessoa>(this.API, pessoa, { headers });
   }
 
   update(pessoa: Partial<Pessoa>) {
-    return this.http.put<Pessoa>(`${this.API}/${pessoa.id}`, pessoa);
+    const headers = this.getAuthHeaders();
+    return this.http.put<Pessoa>(`${this.API}/${pessoa.id}`, pessoa, { headers });
   }
 
   delete(id: number): Observable<any> {
-    let params = new HttpParams()
-      .set('id', id.toString())
-    return this.http.delete<any>(this.API, { params: params });
+    const headers = this.getAuthHeaders();
+    let params = new HttpParams().set('id', id.toString());
+    return this.http.delete<any>(this.API, { params: params, headers });
   }
 
   listAll(): Observable<Pessoa[]> {
-    return this.http.get<Pessoa[]>(this.API);
+    const headers = this.getAuthHeaders();
+    return this.http.get<Pessoa[]>(this.API, { headers });
   }
 
-  loadById(id: number) {
-    return this.http.get<Pessoa>(`${this.API}/${id}`);
+  loadById(id: number): Observable<Pessoa> {
+    const headers = this.getAuthHeaders();
+    return this.http.get<Pessoa>(`${this.API}/${id}`, { headers });
   }
 
   listPorOrdemAlfabetica(): Observable<Pessoa[]> {
-    return this.http.get<Pessoa[]>(`${this.API}/ordenar`);
+    const headers = this.getAuthHeaders();
+    return this.http.get<Pessoa[]>(`${this.API}/ordenar`, { headers });
   }
 
   listPorDataCadastro(): Observable<Pessoa[]> {
-    return this.http.get<Pessoa[]>(`${this.API}/ordenar-data`);
+    const headers = this.getAuthHeaders();
+    return this.http.get<Pessoa[]>(`${this.API}/ordenar-data`, { headers });
   }
 
   getTotalAtivos(): Observable<number> {
-    return this.http.get<number>(`${this.API}/total-ativos`);
+    const headers = this.getAuthHeaders();
+    return this.http.get<number>(`${this.API}/total-ativos`, { headers });
   }
-
-
 }

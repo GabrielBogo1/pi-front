@@ -53,7 +53,7 @@ export class KeycloakService {
   }
 
   logout() {
-    return this.keycloak.logout({ redirectUri: '54.208.91.108' });
+    return this.keycloak.logout({ redirectUri: '54.87.1.103' });
   }
 
   viewInfo() {

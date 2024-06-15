@@ -32,15 +32,13 @@ public class BeansConfig {
                 HttpHeaders.ORIGIN,
                 HttpHeaders.CONTENT_TYPE,
                 HttpHeaders.ACCEPT,
-                HttpHeaders.AUTHORIZATION
-        ));
+                HttpHeaders.AUTHORIZATION));
         config.setAllowedMethods(Arrays.asList(
                 "GET",
                 "POST",
                 "DELETE",
                 "PUT",
-                "PATCH"
-        ));
+                "PATCH"));
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
     }

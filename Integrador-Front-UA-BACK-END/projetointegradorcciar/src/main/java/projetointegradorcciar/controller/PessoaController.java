@@ -16,7 +16,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value = "/api/pessoa")
-@CrossOrigin
+@CrossOrigin(origins = "https://54.208.91.108")
 public class PessoaController {
     @Autowired
     private PessoaRepository pessoaRepository;
@@ -25,7 +25,7 @@ public class PessoaController {
     private PessoaService pessoaService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Pessoa> findByIDPath (@PathVariable("id") final Long id){
+    public ResponseEntity<Pessoa> findByIDPath(@PathVariable("id") final Long id) {
         final Pessoa pessoa = this.pessoaRepository.findById(id).orElse(null);
         return ResponseEntity.ok(pessoa);
     }
@@ -41,13 +41,12 @@ public class PessoaController {
         return pessoaRepository.findByNome(nome);
     }
 
-
-    @GetMapping ("/ordenar")
+    @GetMapping("/ordenar")
     public ResponseEntity<List<Pessoa>> orderByName() {
         return ResponseEntity.ok(this.pessoaRepository.orderByName());
     }
 
-    @GetMapping ("/ordenar-data")
+    @GetMapping("/ordenar-data")
     public ResponseEntity<List<Pessoa>> orderByDataCadastro() {
         return ResponseEntity.ok(this.pessoaRepository.orderByDataCadastro());
     }
@@ -57,39 +56,41 @@ public class PessoaController {
         Long total = pessoaRepository.totalAtivos();
         return ResponseEntity.ok(total);
     }
+
     @PostMapping
-    public ResponseEntity<HttpStatus> cadastrar (@Validated @RequestBody final PessoaDTO pessoaDTO) {
+    public ResponseEntity<HttpStatus> cadastrar(@Validated @RequestBody final PessoaDTO pessoaDTO) {
         try {
             pessoaService.validaPessoa(pessoaDTO);
             return ResponseEntity.ok(HttpStatus.CREATED);
         } catch (Exception e) {
-            return new ResponseEntity<> (null, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<HttpStatus> editar(@PathVariable("id") final Long id, @Validated @RequestBody final PessoaDTO pessoaDTO) {
+    public ResponseEntity<HttpStatus> editar(@PathVariable("id") final Long id,
+            @Validated @RequestBody final PessoaDTO pessoaDTO) {
         try {
             pessoaService.editarPessoa(id, pessoaDTO);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (DataIntegrityViolationException e) {
             // String errorMessage = getErrorMessage(e);
-            return new ResponseEntity<> (null, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
+
     @DeleteMapping
-    public ResponseEntity<HttpStatus> deletaPessoa (@RequestParam ("id") final Long id){
+    public ResponseEntity<HttpStatus> deletaPessoa(@RequestParam("id") final Long id) {
         try {
             this.pessoaService.deletarPessoa(id);
             return new ResponseEntity<>(HttpStatus.OK);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             // String errorMessage = getErrorMessage(e);
-            return new ResponseEntity<> (null, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
 
     // public String getErrorMessage(Exception e) {
-    //     return "Error: " + e.getMessage();
+    // return "Error: " + e.getMessage();
     // }
 }

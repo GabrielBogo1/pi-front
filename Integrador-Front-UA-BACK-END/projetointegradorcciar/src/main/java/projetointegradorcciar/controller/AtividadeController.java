@@ -16,7 +16,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value = "/api/atividade")
-@CrossOrigin
+@CrossOrigin(origins = "https://54.208.91.108")
 public class AtividadeController {
     @Autowired
     private AtividadeRepository atividadeRepository;
